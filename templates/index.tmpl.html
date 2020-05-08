@@ -1,0 +1,29 @@
+<html>
+  {{template "header.tmpl.html"}}
+<body>
+  <form method="POST" action="start">
+      <input type="text" name="accountNumber" />
+      <input type="number" name="total" step="0.01"/>
+      
+      <input type="submit" />
+
+      <p id="output"></p>
+  </form>
+  
+  <script>
+    url = 'ws://127.0.0.1:8844/ws';
+    c = new WebSocket(url);
+
+    c.onmessage = function(msg){
+      $("#output").append((new Date())+ " <== "+msg.data+"\n")
+      console.log(msg)
+    }
+
+    c.onopen = function(){
+      setInterval( 
+        function(){ send("ping") }
+      , 1000 )
+    }
+  </script>
+</body>
+</html>

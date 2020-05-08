@@ -1,0 +1,160 @@
+<!doctype html>
+<html ng-app>
+
+<head>
+  <title>Work from hill</title>
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="/static/css/main.css"/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+   
+   <script src="https://kit.fontawesome.com/5e569333c8.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+        <div class="wrapper">
+                <div id="wizard" class="wizard">
+                  <div class="wizard__content">
+                    <header class="wizard__header">
+                      <div class="wizard__header-overlay"></div>
+                      
+                      <div class="wizard__header-content">
+                            <h1 class="wizard__title" >Pay from hill</h1>
+                            <p class="wizard__subheading">Time to let the government pay it back!</p>
+                      </div>
+                      
+                      <div class="wizard__steps">
+                        <nav class="steps">
+                        <div class="step">
+                          <div class="step__content">
+                            <p class="step__number"><i class="fas fa-sign-in-alt"></i></p>
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+              
+                            <div class="lines">
+                              <div class="line -start">
+                              </div>
+              
+                              <div class="line -background">
+                              </div>
+              
+                              <div class="line -progress">
+                              </div>
+                            </div>  
+                          </div>
+                        </div>
+              
+                        <div class="step">
+                          <div class="step__content">
+                            <p class="step__number"><i class="fas fa-money-bill-alt"></i></p>
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+              
+                            <div class="lines">
+                              <div class="line -background">
+                              </div>
+              
+                              <div class="line -progress">
+                              </div>
+                            </div> 
+                          </div>
+                        </div>
+              
+                        <div class="step">
+                          <div class="step__content">
+                            <p class="step__number"><i class="fa fa-group"></i></p>
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+              
+                            <div class="lines">
+                              <div class="line -background">
+                              </div>
+              
+                              <div class="line -progress">
+                              </div>
+                            </div> 
+                          </div>
+                        </div>
+                      </nav>
+                      </div>
+                    </header>
+                    
+                    
+                    <div class="panels">
+                      <div class="panel">
+                          <header class="panel__header">
+                            <h2 class="panel__title">Setting up</h2>
+                            <p class="panel__subheading"></p>
+                          </header>
+                         
+                         <div class="panel__content">
+                            <p> 
+                                <p>Account Number (As IRD mentions)</p>                                                   
+                                <input type="text" name="accountNumber" onblur="checkConfig()"/>
+                            </p>
+                            <p>
+                                <p>Paying Amount (We will add a max. $1 to let the government have fun)</p>   
+                                <input type="number" name="total" step="0.01" onblur="checkConfig()"/>
+                            </p>
+                         </div>
+
+                         <div class="panel__content">
+                            <button id="config_next" style="display:none" class="button">Next</button>
+                         </div>
+                        
+                      </div>
+              
+                      <div class="panel">
+                         <header class="panel__header">
+                            <h2 class="panel__title">Please login your bank account yourselves</h2>
+                            <p class="panel__subheading">We don't want to process your username and password (for security). please do it yourselves</p>
+                         </header>
+                        
+                         <div class="panel__content">
+                            <div class="circle-loader">
+                                <div class="loading"></div><div class="loading"></div>
+                                <div class="login-checkmark draw"></div>
+                            </div>
+                         </div>
+                      </div>
+              
+                      <div class="panel">
+                        <header class="panel__header">
+                          <h2 class="panel__title">Paying from the hill</h2>
+                          <p class="panel__subheading">Community is everything, and here we do some crazy stuff.</p>
+                         </header>
+                        
+                        <div class="panel__content">
+                            <button id="startPaymentBtn" onclick="startPayment()" disabled>Start Payment</button>
+                            <div id="payMessage" style="display:none">
+                                <span id="paidAmount">0</span> / <span id="total">100</span>
+                                <div id="payingAmount"></div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="wizard__footer">
+                        <button class="button previous">Previous</button>
+                        <button class="button next">Next</button>
+                    </div>
+                  </div>
+                  
+                  <div class="wizard__congrats-message" style="display: none">
+                    <h1>Thank you to pay the rubbish government with me.</h1>
+                    <h3> Credit:  </h3>
+                    <p> <a href="https://lih.kg/ktDQqkX">https://lih.kg/ktDQqkX</a> </p>
+                    <p> <a href="https://codepen.io/kaueburiti/pen/YNZGZO?ref=tiennguyenvan&aff=tiennguyenvan">https://codepen.io/kaueburiti/pen/YNZGZO?ref=tiennguyenvan&aff=tiennguyenvan</a> </p>
+                    <p> <a href="https://fontawesome.com/">https://fontawesome.com/</a> </p>
+                  </div>
+                </div>
+              </div>
+              <script type="text/Javascript"  src="/static/js/main.js"></script>
+</body>
+</html>
