@@ -2,8 +2,8 @@
 
 ## To build
 
-install GO
+install GO <br/>
 https://golang.org/doc/install
 
-$env:GO111MODULE='on'
-go build
+`$env:GO111MODULE='on'`<br/>
+`go build`
