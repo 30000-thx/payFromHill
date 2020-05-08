@@ -1,6 +1,6 @@
 # payFromHill
 
-`To build
+## To build
 
 install GO
 https://golang.org/doc/install
